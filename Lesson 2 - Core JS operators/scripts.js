@@ -25,7 +25,6 @@ Task #2
 /*
 var a = 2;
 var x = 1 + (a *= 2);
-
 x = 5 - потому что первым дело выполнится выражение, заключенное в скобки, а именно:
         *= - говорит нам о том, что мы будем имеющуюся переменную а со значением 2
         умножать на 2, что в итоге нам даст x = 4. Затем выполнится сложение 1 + 4.
@@ -47,7 +46,7 @@ if (a >= 0 && b >= 0) {
    console.log(`A - B = ${a - b}`);
 } else if (a < 0 && b < 0) {
    console.log(`A * B = ${a * b}`);
-} else if ((a >= 0 && b < 0) || (a < 0 && b >= 0)) {
+} else {
    console.log(`A + B = ${a + b}`);
 }
 
@@ -142,33 +141,43 @@ console.log(arrFinalOperation);
 function mathOperation(arg1, arg2, operation) {
    switch (operation) {
       case ('addition'):
-      function getAdd(num1, num2) {
-         return num1 + num2;
-      }
-         console.log(`A + B = ${getAdd(arg1, arg2)}`);
-         break;
+         function getAdd(num1, num2) {
+            return num1 + num2;
+         }
+            return getAdd(arg1,arg2);
       case ('subtraction'):
-      function getSub(num1, num2) {
-         return num1 - num2;
-      }
-         console.log(`A - B = ${getSub(arg1, arg2)}`);
-         break;
+         function getSub(num1, num2) {
+            return num1 - num2;
+         }
+            return getSub(arg1,arg2);
       case ('multiplication'):
-      function getMulti(num1, num2) {
-         return num1 * num2;
-      }
-         console.log(`A * B = ${getMulti(arg1, arg2)}`);
-         break;
+         function getMulti(num1, num2) {
+            return num1 * num2;
+         }
+            return getMulti(arg1,arg2);
       case ('division'):
       function getDiv(num1, num2) {
-         return Math.floor((num1 / num2) * 100) / 100;
-      }
-         console.log(`A / B = ${getDiv(arg1, arg2)}`);
-         break;
+            return Math.floor((num1 / num2) * 100) / 100;
+         }
+            return getDiv(arg1,arg2);
    }
 }
 
-mathOperation(arg1, arg2, arrFinalOperation);
+switch (arrFinalOperation) {
+   case ('addition'):
+      console.log(`A + B = ${mathOperation(arg1, arg2, arrFinalOperation)}`);
+      break;
+   case ('subtraction'):
+      console.log(`A - B = ${mathOperation(arg1, arg2, arrFinalOperation)}`);
+      break;
+   case ('multiplication'):
+      console.log(`A * B = ${mathOperation(arg1, arg2, arrFinalOperation)}`);
+      break;
+   case ('division'):
+      console.log(`A / B = ${mathOperation(arg1, arg2, arrFinalOperation)}`);
+      break;
+}
+
 
 /*
 ===============================================================

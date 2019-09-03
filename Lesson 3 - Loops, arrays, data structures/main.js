@@ -4,7 +4,7 @@
 Task #1
 ===============================================================
 */
-
+/*
 let min = +prompt('Input the number №1'),
     max = +prompt('Input the number №2'),
     finalArr = [],
@@ -29,3 +29,31 @@ while (min < max) {
 }
 
 console.log(finalArr);
+*/
+/*
+===============================================================
+Task #2
+===============================================================
+*/
+
+let cart = [
+    ['Тарелки', '15', '350'],
+    ['Чашки', '24', '175'],
+    ['Ложки', '80', '89'],
+    ['Кастрюли', '5', '950'],
+    ['Сковородки', '11', '1386'],
+    ['Ножи', '87', '2150'],
+    ['Вилки', '80', '75']
+];
+
+function countBasketPrice(arr) {
+   let sum = 0;
+
+   for (let i = 0; i < arr.length; i++) {
+      sum = sum + parseInt(arr[i][2], 10);
+   }
+
+   return sum;
+}
+
+console.log(`Total prise: ${countBasketPrice(cart)} RUB`);

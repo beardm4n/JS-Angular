@@ -4,7 +4,8 @@
 Task #1
 ===============================================================
 */
-/*
+console.log('=== TASK #1 ===');
+
 let min = +prompt('Input the number №1'),
     max = +prompt('Input the number №2'),
     finalArr = [],
@@ -29,12 +30,13 @@ while (min < max) {
 }
 
 console.log(finalArr);
-*/
+
 /*
 ===============================================================
 Task #2
 ===============================================================
 */
+console.log('=== TASK #2 ===');
 
 let cart = [
     ['Тарелки', '15', '350'],
@@ -57,3 +59,36 @@ function countBasketPrice(arr) {
 }
 
 console.log(`Total prise: ${countBasketPrice(cart)} RUB`);
+
+/*
+===============================================================
+Task #3
+===============================================================
+*/
+console.log('=== TASK #3 ===');
+
+for (let i = 0; i < 9; i++, console.log(i)) {
+   // при необходимости выполнить несколько команд, их можно записать через запятую
+}
+
+/*
+===============================================================
+Task #4
+===============================================================
+*/
+console.log('=== TASK #4 ===');
+
+let num1 = prompt('Inter the number #1'),
+    num2 = prompt('Enter the number #2'),
+    symbol = '',
+    numberToCompare = num1;
+
+while (num1 < num2) {
+
+   for (numberToCompare; numberToCompare <= num1; numberToCompare++) {
+      symbol += '#';
+      console.log(symbol);
+   }
+
+   num1++;
+}

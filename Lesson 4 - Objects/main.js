@@ -9,18 +9,14 @@ console.log('=== TASK #1 ===');
 
 let num = +prompt('Input a number');
 
-function compareNum(compareNum) {
-   if (compareNum <= 0) return console.log(`ERROR! A number should be larger then 0. Object is empty:`);
-
-   if (compareNum >= 1000) return console.log(`ERROR! A number should be less then 1000. Object is empty:`);
-
-   if (isNaN(compareNum)) return console.log(`Please, enter a number again. Object is empty:`);
-}
-
 function numToObj(num) {
    let object = {};
 
-   compareNum(num);
+   if (num <= 0) return console.log(`ERROR! A number should be larger then 0. Object is empty: ${JSON.stringify(object)}`);
+
+   if (num >= 1000) return console.log(`ERROR! A number should be less then 1000. Object is empty: ${JSON.stringify(object)}`);
+
+   if (isNaN(num)) return console.log(`Please, enter a number again. Object is empty: ${JSON.stringify(object)}`);
 
    if (num > 0 && num < 1000) {
       let h = Math.floor(num / 100),

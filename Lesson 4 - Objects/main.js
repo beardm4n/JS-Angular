@@ -79,11 +79,7 @@ let cart = [
 ];
 
 function countBasketPrice(arr) {
-   let totalPrice = [];
-
-   arr.forEach((item, index) => totalPrice[index] =  item.quantity * item.price);
-
-   return totalPrice.reduce((acc, current) => acc + current, 0);
+   return arr.reduce((acc, item) => acc + item.quantity * item.price, 0);
 }
 
 console.log(`Total price: ${countBasketPrice(cart)} RUB`);

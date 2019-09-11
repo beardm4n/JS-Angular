@@ -23,9 +23,9 @@ let products = [
    }
 ];
 
-let catalog = document.querySelector('#catalog');
+let catalog = document.querySelector('#catalog'),
+    productInCart = [];
 
-let productInCart = [];
 products.forEach(function (item, index) {
    productInCart[index] = `товар: ` + item.product + ', кол-во: ' +
        item.quantity + ' шт, цена: ' + item.price + ' руб. || ';

@@ -58,16 +58,19 @@ $container.addEventListener('click', (event) => {
       if (+event.target.id === index) {
 
          let $name = document.createElement('div'),
-             $totalPrice = document.createElement('div');
+             $totalPrice = document.createElement('div'),
+             $totalPriceHeader = document.createElement('h4');
 
          totalPrice += +item.price;
 
          $name.textContent = item.product;
-         $totalPrice.textContent = totalPrice;
+         $totalPriceHeader.textContent = "Total price:";
+         $totalPrice.textContent += `${totalPrice} RUB`;
 
          $cart.textContent = '';
 
          $cart.appendChild($name);
+         $cart.appendChild($totalPriceHeader);
          $cart.appendChild($totalPrice);
 
       }

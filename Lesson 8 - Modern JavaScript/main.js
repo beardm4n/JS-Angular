@@ -13,7 +13,7 @@ let products =  [
    }
 ];
 
-const renderItem = ({product = 'product', price}) => `<div class="item"><h3>${product}</h3><p>${price}</p></div>`;
+const renderItem = ({product, price, made = 'Russia'}) => `<div class="item"><h3>${product}</h3><p>${price}</p><p>Made in ${made}</p></div>`;
 
 const renderList = (item) => {
    document.querySelector('.container').innerHTML = item.map(renderItem).join('');

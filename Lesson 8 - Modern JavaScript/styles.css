@@ -1,0 +1,36 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.item {
+   border: 1px solid black;
+   border-radius: 10%;
+   width: 200px;
+   height: 100px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 5px;
+}
+
+.item > h3 {
+   margin: 0;
+}
+
+.item > p {
+   margin: 0;
+}
+
+.btn {
+   border-radius: 15%;
+   width: 200px;
+   height: 25px;
+   color: #4646ff;
+   background: #fff075;
+}
+

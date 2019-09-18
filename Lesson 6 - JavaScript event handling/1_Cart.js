@@ -26,15 +26,11 @@ let products =  [
 let $container = document.querySelector('.container'),
     $cart = document.querySelector('.cart');
 
-let $product = document.createElement('div'),
-    // $priceProduct = document.createElement('div'),
-    $quantity = document.createElement('div');
-    // $totalSum = document.createElement('div');
-
-let count = 0;
+let arrItems = [],
+    totalPrice = 0;
 
 let getDrawProduct = arr => {
-   arr.forEach(item => {
+   arr.forEach((item,index)=> {
       let $name = document.createElement('div'),
           $price = document.createElement('div'),
           $button = document.createElement('button');
@@ -43,26 +39,41 @@ let getDrawProduct = arr => {
       $price.textContent = item.price;
       $button.textContent = 'Add to cart';
 
+      $button.setAttribute('id', index);
+
       $container.appendChild($name);
       $container.appendChild($price);
       $container.appendChild($button);
 
-      $button.addEventListener('click', handleAddProduct);
-
-      function handleAddProduct() {
-
-         $product.textContent = item.product;
-         $quantity.textContent = `${count}`;
-
-         count += 1;
-
-         $cart.appendChild($product);
-         $cart.appendChild($quantity);
-      }
+      arrItems.push(item);
    })
-
 
 };
 
 getDrawProduct(products);
 
+$container.addEventListener('click', (event) => {
+
+   arrItems.forEach((item, index) => {
+      if (+event.target.id === index) {
+
+         let $name = document.createElement('div'),
+             $totalPrice = document.createElement('div'),
+             $totalPriceHeader = document.createElement('h4');
+
+         totalPrice += +item.price;
+
+         $name.textContent = item.product;
+         $totalPriceHeader.textContent = "Total price:";
+         $totalPrice.textContent += `${totalPrice} RUB`;
+
+         $cart.textContent = '';
+
+         $cart.appendChild($name);
+         $cart.appendChild($totalPriceHeader);
+         $cart.appendChild($totalPrice);
+
+      }
+   })
+
+});

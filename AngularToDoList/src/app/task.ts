@@ -9,6 +9,7 @@ export enum TaskBuyers {
 }
 
 export interface Task {
+  id: string;
   title: string;
   status: TaskStatus;
   buyer: TaskBuyers;

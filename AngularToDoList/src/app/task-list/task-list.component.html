@@ -1,0 +1,17 @@
+<ul *ngIf = "items.length">
+  <li *ngFor = "let item of items">
+    <b>{{item.title}}</b>
+    <div [ngSwitch] = "item.status">
+      <div *ngSwitchCase="0">Completed</div>
+      <div *ngSwitchCase="1">Uncompleted</div>
+    </div>
+    <div [ngSwitch]="item.buyer">
+      <div *ngSwitchCase="0"><em>Husband</em></div>
+      <div *ngSwitchCase="1"><em>Wife</em></div>
+    </div>
+  </li>
+</ul>
+
+<div *ngIf="!items.length">
+  <p>No tasks for today =)</p>
+</div>

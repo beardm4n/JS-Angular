@@ -28,7 +28,7 @@ export class TasksContainerComponent implements OnInit {
     },
     {
       id: '4',
-      title: 'Buy a meet',
+      title: 'Buy a meat',
       status: TaskStatus.Uncompleted,
       buyer: TaskBuyers.husband,
     },

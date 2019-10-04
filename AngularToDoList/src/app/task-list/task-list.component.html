@@ -1,6 +1,7 @@
+<h1>Tasks:</h1>
 <ul *ngIf = "items.length">
   <li *ngFor = "let item of items">
-    <b>{{item.title}}</b>
+    <a [routerLink]="'/tasks/' + item.id"><b>{{item.title}}</b></a>
     <div [ngSwitch] = "item.status">
       <div *ngSwitchCase="0">Completed</div>
       <div *ngSwitchCase="1">Uncompleted</div>

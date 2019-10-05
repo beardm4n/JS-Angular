@@ -8,30 +8,7 @@ import {Task, TaskBuyers, TaskStatus} from "../task";
 export class TasksContainerComponent implements OnInit {
 
   private tasks: Task[] = [
-    {
-      id: '1',
-      title: 'Buy a cheese',
-      status: TaskStatus.Uncompleted,
-      buyer: TaskBuyers.husband,
-    },
-    {
-      id: '2',
-      title: 'Buy a milk',
-      status: TaskStatus.Completed,
-      buyer: TaskBuyers.wife,
-    },
-    {
-      id: '3',
-      title: 'Buy a vegetables',
-      status: TaskStatus.Completed,
-      buyer: TaskBuyers.wife,
-    },
-    {
-      id: '4',
-      title: 'Buy a meat',
-      status: TaskStatus.Uncompleted,
-      buyer: TaskBuyers.husband,
-    },
+
   ];
 
   constructor() { }

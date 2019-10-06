@@ -21,4 +21,12 @@ export class TaskService implements GenericService<Task> {
   create(item: Task): Observable<Task> {
     return this.api.create('tasks', item);
   }
+
+  update(id: string, item: Partial<Task>): Observable<Task> {
+    return this.api.update('tasks', id, item);
+  }
+
+  delete(id: string): Observable<Task> {
+    return this.api.delete('tasks', id);
+  }
 }

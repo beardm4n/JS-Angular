@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Buy a cheese",
+      "status": 1,
+      "buyer": 0
+    },
+    {
+      "id": "2",
+      "title": "Buy a milk",
+      "status": 0,
+      "buyer": 1
+    },
+    {
+      "id": "3",
+      "title": "Buy a vegetables",
+      "status": 0,
+      "buyer": 1
+    },
+    {
+      "id": "4",
+      "title": "Buy a meat",
+      "status": 1,
+      "buyer": 0
+    }
+  ]
+}

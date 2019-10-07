@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import {Task, TaskBuyers, TaskStatus} from "../task";
+import {Task} from "../task";
 import {ActivatedRoute} from "@angular/router";
+import {Observable, range} from "rxjs";
+import {TaskService} from "../task.service";
+import {switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-task-container',
-  template: `<app-task [task]="task"></app-task>`,
+  template: `<app-task [task]="task | async"></app-task>`,
 })
 export class TaskContainerComponent implements OnInit {
 
-  private task: Task = {
-    id: '1',
-    title: 'Buy a cheese',
-    status: TaskStatus.Uncompleted,
-    buyer: TaskBuyers.husband,
-  };
+  private task: Observable<Task>;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private service: TaskService,
+  ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      console.log(params)
-    });
+    this.task = this.route.params.pipe(
+      switchMap(params => this.service.get(params.id))
+    );
   }
 
 }

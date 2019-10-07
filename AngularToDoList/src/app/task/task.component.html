@@ -1,1 +1,8 @@
-<h1>{{ task.title }}</h1>
+<div *ngIf="task">
+  <h1>{{ task.title }}</h1>
+  <div [ngSwitch] = "task.status">
+    <div *ngSwitchCase="0">Completed</div>
+    <div *ngSwitchCase="1">Uncompleted</div>
+  </div>
+</div>
+

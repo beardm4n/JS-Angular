@@ -4,10 +4,12 @@ import { HomeComponent } from "./home/home.component";
 import { TaskContainerComponent } from './task-container/task-container.component';
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { TasksContainerComponent } from "./tasks-container/tasks-container.component";
+import {CreateTaskComponent} from "./create-task/create-task.component";
 
 
 const routes: Routes = [
   { path: 'tasks', component: TasksContainerComponent },
+  { path: 'tasks/create', component: CreateTaskComponent },
   { path: 'tasks/:id', component: TaskContainerComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }

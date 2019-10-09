@@ -13,6 +13,8 @@ import {TaskService} from "./task.service";
 import {ApiService} from "./api.service";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { HeaderComponent } from './header/header.component';
+import { CreateTaskComponent } from './create-task/create-task.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     TaskContainerComponent,
     TasksContainerComponent,
     TaskComponent,
+    HeaderComponent,
+    CreateTaskComponent,
   ],
   imports: [
     BrowserModule,

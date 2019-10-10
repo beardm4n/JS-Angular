@@ -13,7 +13,7 @@ export class CreateTaskComponent implements OnInit {
   private title: string = '';
 
   constructor(
-    private srevice: TaskService,
+    private service: TaskService,
     private router: Router,
     ) { }
 
@@ -21,7 +21,7 @@ export class CreateTaskComponent implements OnInit {
   }
 
   onCreate(): void {
-    this.srevice.create({
+    this.service.create({
       title: this.title,
       status: TaskStatus.Uncompleted,
       buyer: TaskBuyers.husband,

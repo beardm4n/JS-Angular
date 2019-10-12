@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TaskService} from "../task.service";
 import {TaskBuyers, TaskStatus} from "../task";
 import {Router} from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-create-task',
@@ -11,7 +12,9 @@ import {Router} from "@angular/router";
 export class CreateTaskComponent implements OnInit {
 
   private title: string = '';
-
+  public model = {
+    title: '',
+  };
   constructor(
     private service: TaskService,
     private router: Router,
@@ -20,14 +23,16 @@ export class CreateTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  onCreate(): void {
-    this.service.create({
-      title: this.title,
-      status: TaskStatus.Uncompleted,
-      buyer: TaskBuyers.husband,
-    }).subscribe(() => {
-      this.router.navigate(['/tasks']);
-    });
+  onCreate(taskForm: NgForm): void {
+    console.log(taskForm.value);
+
+    // this.service.create({
+    //   title: taskForm.value,
+    //   status: TaskStatus.Uncompleted,
+    //   buyer: TaskBuyers.husband,
+    // }).subscribe(() => {
+    //   this.router.navigate(['/tasks']);
+    // });
   }
 
 }

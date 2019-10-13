@@ -1,6 +1,4 @@
-<form #taskForm="ngForm" (ngSubmit)="onCreate(taskForm)">
-  <label from="input" >Input a task
-    <input required id="input" type="text" [(ngModel)]="model.title" name="title">
-  </label>
-  <button [disabled]="!taskForm.valid" type="submit">Create</button>
-</form>
+<label>
+  <input type="text" [(ngModel)]="title">
+</label>
+<button (click)="onCreate()">Create</button>

@@ -11,7 +11,7 @@ import { TasksContainerComponent } from './tasks-container/tasks-container.compo
 import { TaskComponent } from './task/task.component'
 import {TaskService} from "./task.service";
 import {ApiService} from "./api.service";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { HeaderComponent } from './header/header.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
@@ -33,6 +33,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     TaskService,
